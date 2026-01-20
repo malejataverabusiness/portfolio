@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>María Tavera - Spacious Prism Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'petite-orchid': "#DB9A9C",
+                        'rock-blue': "#9AB8DB",
+                        'cold-purple': "#ABA9DB",
+                        'light-airy': "#F2F4FB",
+                        'glass-border': "rgba(255, 255, 255, 0.6)",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        'glass-lg': '24px',
+                        'glass-md': '20px',
+                        'glass-sm': '16px',
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply text-slate-900 antialiased min-h-screen overflow-x-hidden p-8 flex flex-col items-center;
+                background: #fdfdff;
+            }
+        }
+        .liquid-environment {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: radial-gradient(circle at 50% 50%, #fdfdff 0%, #e8eaf6 100%);
+            overflow: hidden;
+        }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            mix-blend-mode: multiply;
+            opacity: 0.6;
+            border-radius: 50%;
+        }
+        .blob-1 { width: 800px; height: 800px; background: #DB9A9C; top: -10%; left: -5%; }
+        .blob-2 { width: 900px; height: 900px; background: #9AB8DB; bottom: -15%; right: -5%; }
+        .blob-3 { width: 700px; height: 700px; background: #ABA9DB; top: 10%; left: 60%; transform: translate(-50%, -50%); }
+        .blob-4 { width: 600px; height: 600px; background: #E1A298; bottom: 10%; left: 5%; }
+        .prism-mesh {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.5) 0%, transparent 40%),
+                radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 35%);
+            pointer-events: none;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(60px) saturate(200%);
+            -webkit-backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 
+                0 40px 80px -15px rgba(0, 0, 0, 0.05),
+                inset 0 1px 2px rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%, rgba(255,255,255,0.1) 100%);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .glass-capsule {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.04),
+                inset 0 0 12px rgba(255, 255, 255, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-tile {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.03);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .nav-tile:hover {
+            transform: translateY(-8px) scale(1.01);
+            background: rgba(255, 255, 255, 0.6);
+            border-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+        }
+        .inner-glow {
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+        .text-high-contrast {
+            color: #0f172a;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body>
+<div class="liquid-environment">
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+<div class="blob blob-4"></div>
+</div>
+<div class="prism-mesh"></div>
+<main class="w-full max-w-6xl glass-panel rounded-glass-lg p-12 md:p-20 flex flex-col items-center justify-center text-center relative z-10 mt-24 mb-12" id="main-panel">
+<header class="mb-14 relative z-20">
+<h1 class="text-6xl md:text-7xl font-light tracking-tighter mb-8 text-high-contrast">
+                Hello, I'm <span class="font-black">María Tavera</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-800 max-w-3xl mx-auto leading-relaxed font-normal">
+                With over 14 years of mastery in UI/UX design and front-end development, I bridge the gap between complex logic and ethereal spatial aesthetics. Crafting the future through liquid interfaces and high-performance code.
+            </p>
+</header>
+<div class="w-full max-w-2xl mb-20 relative z-20">
+<div class="glass-capsule rounded-glass-md p-2 flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-glass-sm flex items-center justify-center glass-panel inner-glow text-petite-orchid shadow-sm">
+<span class="material-symbols-outlined text-2xl">mic</span>
+</div>
+<input class="bg-transparent border-none focus:ring-0 text-slate-900 placeholder-slate-500 text-lg w-full py-3 font-normal" placeholder="Explore María's expertise..." type="text"/>
+<button class="mr-2 w-10 h-10 rounded-glass-sm flex items-center justify-center bg-slate-900/5 hover:bg-slate-900/10 transition-all">
+<span class="material-symbols-outlined text-xl text-slate-900">arrow_forward</span>
+</button>
+</div>
+<div class="mt-6 flex justify-center gap-8">
+<span class="text-[10px] text-slate-700 uppercase tracking-[0.3em] font-black">Experience Design</span>
+<span class="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-black">•</span>
+<span class="text-[10px] text-slate-700 uppercase tracking-[0.3em] font-black">Spatial Engineering</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full relative z-20">
+<a class="nav-tile rounded-glass-md p-10 group flex flex-col items-center text-center" href="#">
+<div class="w-16 h-16 rounded-glass-sm glass-panel inner-glow flex items-center justify-center mb-6 transition-all group-hover:scale-105 group-hover:border-petite-orchid/60">
+<span class="material-symbols-outlined text-3xl text-petite-orchid">work_history</span>
+</div>
+<h3 class="text-lg font-bold mb-2 tracking-tight text-slate-900">Experience</h3>
+<p class="text-sm text-slate-700 font-medium leading-relaxed">14+ Years Professional Journey</p>
+</a>
+<a class="nav-tile rounded-glass-md p-10 group flex flex-col items-center text-center" href="#">
+<div class="w-16 h-16 rounded-glass-sm glass-panel inner-glow flex items-center justify-center mb-6 transition-all group-hover:scale-105 group-hover:border-cold-purple/60">
+<span class="material-symbols-outlined text-3xl text-cold-purple">psychology</span>
+</div>
+<h3 class="text-lg font-bold mb-2 tracking-tight text-slate-900">Skills</h3>
+<p class="text-sm text-slate-700 font-medium leading-relaxed">Technical &amp; UI/UX Mastery</p>
+</a>
+<a class="nav-tile rounded-glass-md p-10 group flex flex-col items-center text-center" href="#">
+<div class="w-16 h-16 rounded-glass-sm glass-panel inner-glow flex items-center justify-center mb-6 transition-all group-hover:scale-105 group-hover:border-rock-blue/60">
+<span class="material-symbols-outlined text-3xl text-rock-blue">grid_view</span>
+</div>
+<h3 class="text-lg font-bold mb-2 tracking-tight text-slate-900">Projects</h3>
+<p class="text-sm text-slate-700 font-medium leading-relaxed">High-Performance Portfolio</p>
+</a>
+</div>
+</main>
+<footer class="mt-auto mb-4 z-50 flex justify-center w-full">
+<div class="glass-panel px-10 py-4 rounded-glass-md flex items-center gap-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-600 text-lg">schedule</span>
+<span class="text-[10px] font-bold tracking-widest text-slate-900" id="current-time">00:00 AM</span>
+</div>
+<div class="h-5 w-[1px] bg-white/30"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-600 text-lg">travel_explore</span>
+<span class="text-[10px] font-bold tracking-widest text-slate-900 uppercase">Remote • Worldwide</span>
+</div>
+<div class="h-5 w-[1px] bg-white/30"></div>
+<div class="flex items-center gap-6">
+<a class="text-slate-700 hover:text-slate-900 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="text-slate-700 hover:text-slate-900 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        function updateTime() {
+            const timeElement = document.getElementById('current-time');
+            const now = new Date();
+            timeElement.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }).toUpperCase();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+        document.addEventListener('mousemove', (e) => {
+            const panel = document.getElementById('main-panel');
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            const moveX = (clientX - innerWidth / 2) / 120;
+            const moveY = (clientY - innerHeight / 2) / 120;
+            const rotateX = (clientY - innerHeight / 2) / -300;
+            const rotateY = (clientX - innerWidth / 2) / 300;
+            if (panel) {
+                panel.style.transform = `perspective(2000px) translate(${moveX}px, ${moveY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            }
+        });
+    </script>
+
+</body></html>
